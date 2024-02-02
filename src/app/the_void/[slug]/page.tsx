@@ -72,17 +72,20 @@ export interface Params {
 }
 
 export const BlogPost = async ({ params }: { params: Params }) => {
+
     // Here we can load the markdown file
     const blog = await load_markdown_blog_post(params.slug);
 
     // If no blog returned then we can return a 404
     if (!blog) {
-        return {
-            notFound: true,
-        };
+        return <div style={
+            {
+                marginTop: "100px",
+                width: "100%",
+                textAlign: "center"
+            }
+        }>Not Found.</div>
     }
-
-
 
     return (
         <div className="blog-post-page">
