@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./styles/index.scss"
 import { Header } from "@/comps/Header";
 import { Footer } from "@/comps/Footer";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 export const metadata: Metadata = {
   title: "Void Labs | Australia",
@@ -16,6 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleAnalytics trackPageViews />
       <Header />
       <body>{children}</body>
       <Footer />
