@@ -1,0 +1,515 @@
+// Define some colours
+$bg: #0B0B0B;
+$fg: #F5F5F5;
+$border-color: #363636;
+$header-font: 'Mona Sans', sans-serif;
+$body-font: 'Ubuntu Mono', monospace;
+
+// Load in some fonts
+@font-face {
+    font-family: 'Mona Sans';
+    src: url('/fonts/MonaSansVF.woff2') format('woff2-variations'),
+        url('/fonts/MonaSansVF.woff2') format('woff2');
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Ubuntu Mono";
+    src: url("/fonts/UbuntuMono-Regular.ttf") format("truetype");
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+
+:root {
+    background-color: $bg;
+    color: $fg;
+    font-family: $body-font;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: $header-font;
+    color: $fg;
+    font-weight: 600;
+    font-stretch: ultra-expanded;
+}
+
+a {
+    color: $fg;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    padding: 15px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out;
+
+    .logo {
+        // width: fit-content;
+        padding: 10px;
+        cursor: pointer;
+        width: auto;
+        max-height: 38px;
+        pointer-events: inherit;
+        z-index: 100;
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .header-actions {
+        display: flex;
+        gap: 30px;
+    }
+}
+
+#header-scrolled {
+    background-color: $bg;
+}
+
+.hero {
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+
+    .hero-right,
+    .hero-left {
+        width: 50%;
+        height: calc(100% - 60px);
+        padding: 0;
+        margin: 30px;
+        // overflow: hidden;
+        position: relative;
+    }
+
+
+    .hero-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 77%;
+
+        .hero-left__text {
+            max-width: 680px;
+
+            h1 {
+                font-size: 3rem;
+            }
+        }
+
+
+        .hero-left__image {
+            width: calc(100% + 60px);
+            height: calc(100% + 60px);
+            object-fit: cover;
+            background-size: cover;
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            right: -30px;
+            bottom: -30px;
+            z-index: -1;
+        }
+    }
+
+    .hero-right {
+        display: flex;
+        align-items: center;
+
+        .hero-right__text {
+            max-width: 680px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    label {
+        font-size: 0.8rem;
+    }
+
+    input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: $fg;
+        color: $bg;
+        border-radius: 2px;
+        font-size: 1rem;
+        font-family: $body-font;
+
+        &:focus {
+            outline: none;
+            border: 1px solid #000;
+        }
+    }
+}
+
+.button-wrapper {
+    display: flex;
+    width: 100%;
+
+    button {
+        width: 100%;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 2px;
+        font-size: 1rem;
+        cursor: pointer;
+        background-color: #000;
+        color: $fg;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+            background-color: $fg;
+            color: $bg;
+        }
+    }
+}
+
+.form {
+    margin: 30px auto;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.5rem;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $header-font;
+}
+
+#modal-closed {
+    display: none;
+}
+
+.modal {
+    position: absolute;
+    z-index: 20000;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    // background-color: $bg;
+    backdrop-filter: blur(10px);
+    background-color: #0b0b0bc5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal-content {
+        opacity: 1;
+        border-radius: 10px;
+        max-width: 500px;
+        background-color: $bg;
+        border: $border-color 1px solid;
+        width: 100%;
+        padding: 15px;
+        position: relative;
+        margin-left: 15px;
+        margin-right: 15px;
+
+        h2 {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            padding: 5px;
+            font-size: 2rem;
+            color: $border-color;
+            cursor: pointer;
+            transition: color 0.2s ease-in-out;
+
+            &:hover {
+                color: #da2f2f;
+            }
+
+            // background-color: red;
+        }
+    }
+}
+
+.socials-cons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    .social-con {
+        border-radius: 100%;
+        border: 1px solid $border-color;
+        padding: 15px;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        max-width: 40px;
+        max-height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+
+        img {
+            min-width: 25px;
+            width: 100%;
+            max-width: 25px;
+            height: auto;
+        }
+
+        &:hover {
+            background-color: $border-color;
+
+        }
+    }
+}
+
+// Blog List Page
+.the-void-page {
+    padding: 30px;
+    margin-top: 90px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .header_the_void {
+        width: 100%;
+        display: flex;
+        margin-bottom: 30px;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 0.8rem;
+        }
+    }
+
+    .blog-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        gap: 30px;
+        margin-bottom: 120px;
+
+        .blog-item {
+            cursor: pointer;
+
+            h2 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: 0.85rem;
+            }
+
+            .blog-image {
+                border-radius: 5px;
+                width: auto;
+                height: 250px;
+                background-position: center;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+// Blog Post Page
+.blog-post-page {
+    padding: 30px;
+    max-width: calc(100% - 60px);
+    overflow: hidden;
+
+    .blog-content {
+        margin-top: 120px;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .left-image-con {
+            margin-top: 120px;
+            margin-bottom: 120px;
+            display: flex;
+            gap: 60px;
+            align-items: center;
+
+            img {
+                max-width: 50%;
+            }
+
+            // Select nth element
+            // Select the nth element
+            &>div:nth-child(n) {
+                /* Your styles for the nth element */
+                /* For example: */
+                margin-right: 20px;
+                max-width: 50%;
+            }
+        }
+    }
+
+    .blog-post-header {
+        height: 800px;
+        background-color: #000;
+        width: 100vw;
+        margin-top: -50px;
+        margin-left: -30px;
+        padding: 30px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 60px;
+        position: relative;
+
+        // Add in linear gradient overlay
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.37), rgba(0, 0, 0, 0.8));
+            /* Adjust the gradient values as needed */
+        }
+
+        h1,
+        h2 {
+            max-width: 60%;
+            margin: 5px;
+            z-index: 100;
+        }
+
+        h2 {
+            font-family: $body-font;
+        }
+    }
+}
+
+// Less than 1000px
+@media (max-width: 1000px) {
+
+    .blog-list {
+        grid-template-columns: repeat(2, minmax(200px, 1fr)) !important;
+    }
+
+    .logo {
+        max-height: 30px !important;
+    }
+
+    .hero {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hero-right,
+    .hero-left {
+        width: calc(100% - 60px) !important;
+        height: 100vh !important;
+    }
+
+    .hero-left__image {
+        width: calc(100% + 60px) !important;
+    }
+
+
+    .blog-post-header {
+
+        h1,
+        h2 {
+            max-width: calc(100% - 60px) !important;
+        }
+    }
+
+    .left-image-con {
+        flex-direction: column;
+
+        img,
+        &>div:nth-child(n) {
+            max-width: 100% !important;
+        }
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .header_the_void {
+        flex-direction: column;
+        align-items: flex-start !important;
+        margin-top: -30px;
+    }
+
+
+    .blog-list {
+        grid-template-columns: repeat(1, minmax(200px, 1fr)) !important;
+    }
+}
