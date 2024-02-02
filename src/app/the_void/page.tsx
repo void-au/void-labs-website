@@ -6,7 +6,6 @@ import { Blog, get_blogs } from "@/utils/blogs";
 const load_blogs = async () => {
     const blogs = await get_blogs();
     return blogs;
-
 }
 
 

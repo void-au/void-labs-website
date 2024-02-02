@@ -4,7 +4,7 @@
 // const path = require('path');
 // let blog = null;
 
-import { get_blog_by_slug } from "@/utils/blogs";
+import { get_blog_by_slug, get_blogs } from "@/utils/blogs";
 import path from "path";
 import fs from "fs"
 import matter from "gray-matter";
@@ -12,36 +12,16 @@ import { remark } from "remark";
 import html from 'remark-html';
 
 
-// try {
-//     blog = await get_blog_by_slug(params?.slug);
 
-//     if (!blog) {
-//         return {
-//             notFound: true,
-//         };
-//     }
+export async function generateStaticParams() {
+    const blogs = await get_blogs();
 
-//     // Get the file path
-//     const file_path = path.join(process.cwd(), blog.post_path);
-//     const temp = fs.readFileSync(file_path, 'utf-8');
-
-//     const matter_result = matter(temp);
-//     const parsed = await remark()
-//         .use(prism as any)
-//         .use(html, { sanitize: false }) // allow all HTML at your own risk
-//         .process(matter_result.content);
-
-//     blog.content = parsed.toString();
-// } catch (err) {
-//     console.error('Failed to load the file.', err);
-// }
-
-// return {
-//     props: {
-//         blog: blog,
-//         revalidate: 60000,
-//     },
-// };
+    return blogs.map(blog => {
+        return {
+            slug: blog.slug
+        }
+    })
+}
 
 const load_markdown_blog_post = async (slug: string) => {
     // Load the markdown file
@@ -71,8 +51,7 @@ export interface Params {
     slug: string;
 }
 
-export const BlogPost = async ({ params }: { params: Params }) => {
-
+export default async function BlogPost({ params }: { params: Params }) {
     // Here we can load the markdown file
     const blog = await load_markdown_blog_post(params.slug);
 
@@ -97,8 +76,6 @@ export const BlogPost = async ({ params }: { params: Params }) => {
             </div>
             <div className="blog-content" dangerouslySetInnerHTML={{ __html: blog?.content || '' }} />
         </div >
-    );
-};
+    )
+}
 
-
-export default BlogPost;
