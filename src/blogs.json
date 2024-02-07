@@ -6,5 +6,13 @@
         "subtitle": "Robotics and Drones Redefining Speed, Sustainability, and Seamless Services in Mining, Environment, Medical, and Commerce",
         "header_image": "/img/blogs/1_header.png",
         "blog_path": "/blogs/1.md"
+    },
+    {
+        "id": 2,
+        "slug": "emerging-trends-of-2024",
+        "title": "Emerging Trends of 2024",
+        "subtitle": "Mobile App Advancements in IoT, Wearables, Mobile Wallets, Beacons, and Foldable Innovation",
+        "header_image": "/img/blogs/2_header.png",
+        "blog_path": "/blogs/2.md"
     }
 ]
