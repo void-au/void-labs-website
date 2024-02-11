@@ -10,6 +10,7 @@ import fs from "fs"
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from 'remark-html';
+import { NextSeo } from "next-seo";
 
 
 
@@ -55,6 +56,9 @@ export default async function BlogPost({ params }: { params: Params }) {
     // Here we can load the markdown file
     const blog = await load_markdown_blog_post(params.slug);
 
+    // Set the page title
+
+
     // If no blog returned then we can return a 404
     if (!blog) {
         return <div style={
@@ -79,3 +83,11 @@ export default async function BlogPost({ params }: { params: Params }) {
     )
 }
 
+// or Dynamic metadata
+export async function generateMetadata({ params }: { params: Params }) {
+    const blog = await load_markdown_blog_post(params.slug);
+
+    return {
+        title: blog?.meta?.title || "the_void | Blog Post",
+    }
+}
