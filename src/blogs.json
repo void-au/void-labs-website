@@ -14,5 +14,13 @@
         "subtitle": "Mobile App Advancements in IoT, Wearables, Mobile Wallets, Beacons, and Foldable Innovation",
         "header_image": "/img/blogs/2_header.png",
         "blog_path": "/blogs/2.md"
+    },
+    {
+        "id": 3,
+        "slug": "tech-revolution-vr-and-ar",
+        "title": "Tech Revolution",
+        "subtitle": "Will AR and VR Save or Sink Our Social Lives? Brace for Impact as We Dive into the Future!",
+        "blog_path": "/blogs/3.md",
+        "header_image": "/img/blogs/3_header.png"
     }
 ]
