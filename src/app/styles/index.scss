@@ -392,7 +392,36 @@ a {
         margin-left: auto;
         margin-right: auto;
 
+        .right-image-con {
+            a {
+                text-decoration: underline;
+            }
+
+            margin-top: 120px;
+            margin-bottom: 120px;
+            display: flex;
+            gap: 60px;
+            align-items: center;
+
+            img {
+                max-width: 50%;
+            }
+
+            // Select nth element
+            // Select the nth element
+            &>div:nth-child(n) {
+                /* Your styles for the nth element */
+                /* For example: */
+                margin-right: 20px;
+                max-width: 50%;
+            }
+        }
+
         .left-image-con {
+            a {
+                text-decoration: underline;
+            }
+
             margin-top: 120px;
             margin-bottom: 120px;
             display: flex;
@@ -491,6 +520,15 @@ a {
 
     .left-image-con {
         flex-direction: column;
+
+        img,
+        &>div:nth-child(n) {
+            max-width: 100% !important;
+        }
+    }
+
+    .right-image-con {
+        flex-direction: column-reverse;
 
         img,
         &>div:nth-child(n) {
