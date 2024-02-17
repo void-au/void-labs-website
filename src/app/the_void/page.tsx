@@ -1,5 +1,6 @@
 
 import { BlogItem } from "@/comps/BlogItem";
+import { Subscribe } from "@/comps/Subscribe";
 import { Blog, get_blogs } from "@/utils/blogs";
 
 
@@ -23,6 +24,13 @@ const TheVoidPage = async () => {
 
             <div className="blog-list">{blogs && blogs.map((blog) => <BlogItem blog={blog} />)}</div>
 
+            <br />
+            <br />
+            <Subscribe />
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
     )
 }

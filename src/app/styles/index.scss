@@ -483,6 +483,25 @@ a {
     }
 }
 
+.subscribe {
+    max-width: 800px;
+    margin: 60px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: $fg;
+    color: $bg;
+
+    padding: 30px;
+    border-radius: 5px;
+
+    h3 {
+        margin-top: 0px;
+
+        color: $bg;
+    }
+}
+
 // Less than 1000px
 @media (max-width: 1000px) {
 

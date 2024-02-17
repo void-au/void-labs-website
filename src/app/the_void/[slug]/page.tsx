@@ -10,6 +10,7 @@ import fs from "fs"
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from 'remark-html';
+import { Subscribe } from "@/comps/Subscribe";
 
 
 
@@ -78,6 +79,17 @@ export default async function BlogPost({ params }: { params: Params }) {
                 <h2>{blog?.meta?.subtitle}</h2>
             </div>
             <div className="blog-content" dangerouslySetInnerHTML={{ __html: blog?.content || '' }} />
+
+            <br />
+            <br />
+            <Subscribe />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
         </div >
     )
 }
