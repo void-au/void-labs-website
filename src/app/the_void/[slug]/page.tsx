@@ -100,7 +100,7 @@ export async function generateMetadata({ params }: { params: Params }) {
         openGraph: {
             images: [
                 {
-                    url: blog?.meta?.header_image || ''
+                    url: `https://voidlabs.com.au${blog?.meta?.header_image}` || ''
                 }
             ],
         },
