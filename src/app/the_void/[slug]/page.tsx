@@ -94,12 +94,15 @@ export default async function BlogPost({ params }: { params: Params }) {
 // or Dynamic metadata
 export async function generateMetadata({ params }: { params: Params }) {
     const blog = await load_markdown_blog_post(params.slug);
-
     return {
         title: blog?.meta?.title || "the_void | Blog Post",
         description: blog?.meta?.subtitle || "the_void | Blog Post",
         openGraph: {
-            images: [blog?.meta?.header_image || ''],
+            images: [
+                {
+                    url: blog?.meta?.header_image || ''
+                }
+            ],
         },
     }
 }
