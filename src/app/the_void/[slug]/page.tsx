@@ -12,8 +12,6 @@ import { remark } from "remark";
 import html from 'remark-html';
 import { Subscribe } from "@/comps/Subscribe";
 
-
-
 export async function generateStaticParams() {
     const blogs = await get_blogs();
 
@@ -57,8 +55,6 @@ export default async function BlogPost({ params }: { params: Params }) {
     const blog = await load_markdown_blog_post(params.slug);
 
     // Set the page title
-
-
     // If no blog returned then we can return a 404
     if (!blog) {
         return <div style={
@@ -72,6 +68,7 @@ export default async function BlogPost({ params }: { params: Params }) {
 
     return (
         <div className="blog-post-page">
+
             <div className="blog-post-header" style={{
                 backgroundImage: `url("${blog?.meta?.header_image}")`
             }}>
@@ -100,5 +97,9 @@ export async function generateMetadata({ params }: { params: Params }) {
 
     return {
         title: blog?.meta?.title || "the_void | Blog Post",
+        description: blog?.meta?.subtitle || "the_void | Blog Post",
+        openGraph: {
+            images: [blog?.meta?.header_image || ''],
+        },
     }
 }
