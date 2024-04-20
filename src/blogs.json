@@ -30,5 +30,13 @@
         "subtitle": "Meet the 4 Authentic Tech Companies Reshaping Our Planet!",
         "blog_path": "/blogs/4.md",
         "header_image": "/img/blogs/4_header.png"
+    },
+    {
+        "id": 5,
+        "slug": "From-spying-eyes-to-Secure-Skies",
+        "title": "From Spying Eyes to Secure Skies",
+        "subtitle": "Rethinking Surveillance in the Digital Era",
+        "blog_path": "/blogs/5.md",
+        "header_image": "/img/blogs/5_header.png"
     }
 ]

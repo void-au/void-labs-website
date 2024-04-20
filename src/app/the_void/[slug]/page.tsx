@@ -1,9 +1,3 @@
-
-
-// const fs = require('fs');
-// const path = require('path');
-// let blog = null;
-
 import { get_blog_by_slug, get_blogs } from "@/utils/blogs";
 import path from "path";
 import fs from "fs"

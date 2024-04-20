@@ -16,7 +16,7 @@ export interface Blog {
  * Get the blogs from the JSON file
  */
 export const get_blogs = async (): Promise<Blog[]> => {
-    return blogs;
+    return blogs?.sort((a, b) => b.id - a.id) || [];
 }
 
 
