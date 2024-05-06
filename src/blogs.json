@@ -38,5 +38,13 @@
         "subtitle": "Rethinking Surveillance in the Digital Era",
         "blog_path": "/blogs/5.md",
         "header_image": "/img/blogs/5_header.png"
+    },
+    {
+        "id": 6,
+        "slug": "Cash-or-card-The-Battle-for-Financial-Freedom-in-a-Digital-Age!",
+        "title": "Cash or Card?",
+        "subtitle": "The Battle for Financial Freedom in a Digital Age!",
+        "blog_path": "/blogs/6.md",
+        "header_image": "/img/blogs/6_header.png"
     }
 ]
