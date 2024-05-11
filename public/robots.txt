@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://voidlabs.com.au
+
+# Sitemaps
+Sitemap: https://voidlabs.com.au/sitemap.xml
