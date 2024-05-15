@@ -46,5 +46,14 @@
         "subtitle": "The Battle for Financial Freedom in a Digital Age!",
         "blog_path": "/blogs/6.md",
         "header_image": "/img/blogs/6_header.png"
+    },
+    {
+        "id": 7,
+        "slug": "drop-the-drop-shipping",
+        "title": "Drop-The-Drop-Shipping",
+        "subtitle": "Unveiling the Truth Behind Online Shopping!",
+        "blog_path": "/blogs/7.md",
+        "header_image": "/img/blogs/7_header.png"
+
     }
 ]
