@@ -55,5 +55,14 @@
         "blog_path": "/blogs/7.md",
         "header_image": "/img/blogs/7_header.png"
 
+    },
+    {
+        "id": 8,
+        "slug": "think-your-photos-are-safe",
+        "title": "Think your Photos are Safe?",
+        "subtitle": "The Shocking Truth About Face-Altering Apps and Deep Fakes",
+        "blog_path": "/blogs/8.md",
+        "header_image": "/img/blogs/8_header.png"
+
     }
 ]
