@@ -67,6 +67,11 @@ a {
     }
 }
 
+li {
+    // Change the list spacing after
+    margin-bottom: 10px;
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -139,7 +144,7 @@ a {
         }
 
 
-        .hero-left__image {
+        .hero-left__image, .hero-left__scene {
             width: calc(100% + 60px);
             height: calc(100% + 60px);
             object-fit: cover;

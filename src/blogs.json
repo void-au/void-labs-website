@@ -63,6 +63,13 @@
         "subtitle": "The Shocking Truth About Face-Altering Apps and Deep Fakes",
         "blog_path": "/blogs/8.md",
         "header_image": "/img/blogs/8_header.png"
-
+    },
+    {
+        "id": 9,
+        "slug": "dont-be-fooled-by-those-rose-coloured-glasses",
+        "title": "Don't be Fooled by Those Rose-Coloured Glasses",
+        "subtitle": "How to regain control of your finances in a subscription-driven world",
+        "blog_path": "/blogs/9.md",
+        "header_image": "/img/blogs/9_header.png"
     }
 ]
