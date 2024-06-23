@@ -10,9 +10,9 @@ export default function Home() {
           <div className="hero-left__scene">
             <HomeScene />
           </div>
-          {/* <div className="hero-left__image"
+          <div className="hero-left__image"
             style={{ backgroundImage: "url(/img/hero.png)" }}
-          /> */}
+          />
           <div className="hero-left__text">
             <h1>Expert Software Solutions Aligned with Cutting Edge IoT Development.</h1>
             <p>Driving progress through expert Software Development & IoT Engineering.</p>
